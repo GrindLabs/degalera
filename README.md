@@ -1,2 +1,2 @@
 # degalera
-Auto-generated web application for parties notifications.
+Auto-generated web application for party notifications.
