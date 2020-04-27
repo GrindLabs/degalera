@@ -1,0 +1,31 @@
+version: "2"
+services:
+  mongo:
+    container_name: mongo-mitiebot
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - .:/mongo
+    networks:
+      - dgmitiebot_mitiebotnet
+
+  mongo_seed:
+    image: mongo:latest
+    links:
+      - mongo
+    volumes:
+      - ./dump:/dump
+    networks:
+      - dgmitiebot_mitiebotnet
+    command:
+      /dump/startup.sh
+
+
+networks:
+  dgmitiebot_mitiebotnet:
+    external: true
+
+
+
+

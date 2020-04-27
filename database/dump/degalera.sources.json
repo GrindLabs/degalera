@@ -1,0 +1,240 @@
+[{
+        "name": "Sympla",
+        "alias": "sympla",
+        "logo": "https://www.sympla.com.br/images/public/favicon/new/android-icon-192x192.png",
+        "domain": "sympla.com.br",
+        "lookup": [
+            "https://www.sympla.com.br/eventos/salvador-ba/festas-shows",
+            "https://www.sympla.com.br/eventos/salvador-ba/carnaval"
+        ],
+        "blocks": [{
+            "name": "event",
+            "path": "//*[@id='events-grid']/div/div/ul/li"
+        }],
+        "rules": [],
+        "fields": [{
+                "key": "name",
+                "path": "//*[@id='events-grid']/div/div/ul/li/a/div[2]/div[2]/span"
+            },
+            {
+                "key": "location",
+                "path": "//*[@id='events-grid']/div/div/ul/li/a/div[2]/div[3]"
+            },
+            {
+                "key": "flyer",
+                "path": "//*[@id='events-grid']/div/div/ul/li/a/div[1]/div"
+            },
+            {
+                "key": "date",
+                "path": "//*[@id='events-grid']/div/div/ul/li/a/div[2]/div[1]/div/div/div[1]"
+            }
+        ],
+        "isActive": true
+    },
+    {
+        "name": "Partiu Balada",
+        "alias": "partiubalada",
+        "logo": "https://partiubalada.com.br/imgs/logo-top-mini7.png",
+        "domain": "partiubalada.com.br",
+        "lookup": [
+            "https://partiubalada.com.br//busca"
+        ],
+        "blocks": [{
+            "name": "event",
+            "path": "/html/body/div[7]/div[1]/div[1]/div[2]/div/div/div[1]/div"
+        }],
+        "rules": [],
+        "fields": [{
+                "key": "name",
+                "path": "/html/body/div[7]/div[1]/div[1]/div[2]/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr/td[2]/div/a/span[1]"
+            },
+            {
+                "key": "location",
+                "path": "/html/body/div[7]/div[1]/div[1]/div[2]/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr/td[2]/div/a/span[2]"
+            },
+            {
+                "key": "flyer",
+                "path": "/html/body/div[7]/div[1]/div[1]/div[2]/div/div/div[1]/div/div/div/div[1]/a/img"
+            },
+            {
+                "key": "date",
+                "path": "/html/body/div[7]/div[1]/div[1]/div[2]/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr/td[1]/div/div/div"
+            }
+        ],
+        "isActive": true
+    },
+    {
+        "name": "Balcão de Ingressos",
+        "alias": "balcaodeingressos",
+        "logo": "https://balcaodeingressos.com.br/wp-content/uploads/2019/02/logo_balcao.png",
+        "domain": "balcaodeingressos.com.br",
+        "lookup": [
+            "https://balcaodeingressos.com.br/show/",
+            "https://balcaodeingressos.com.br/carnaval/"
+        ],
+        "blocks": [{
+            "name": "event",
+            "path": "//*[@id='grid-view']/div/div[not(contains(@class, 'clearfix'))]"
+        }],
+        "rules": [],
+        "fields": [{
+                "key": "name",
+                "path": "//*[@id='grid-view']/div/div/div/div/h3"
+            },
+            {
+                "key": "location",
+                "path": "//*[@id='grid-view']/div/div/div/div/p[2]"
+            },
+            {
+                "key": "flyer",
+                "path": "//*[@id='grid-view']/div/div/div/div/a/img"
+            },
+            {
+                "key": "date",
+                "path": "//*[@id='grid-view']/div/div/div/div/p[1]"
+            }
+        ],
+        "isActive": true
+    },
+    {
+        "name": "Pida",
+        "alias": "pida",
+        "logo": "https://pida.com.br/assets/web/images/24x24.png?v=deba3ae91d284b4",
+        "domain": "pida.com.br",
+        "lookup": [
+            "https://pida.com.br/eventos"
+        ],
+        "blocks": [{
+                "name": "event",
+                "path": "//*[@id='gridContentEventos']"
+            },
+            {
+                "name": "description",
+                "path": "/html/body/main/section[2]/div[2]/div/div/div/figure/figcaption"
+            },
+            {
+                "name": "information",
+                "path": "/html/body/main/section[2]/div[2]/div/div/div/figure/figcaption/div[2]"
+            }
+        ],
+        "rules": [{
+            "path": "//*[@id='gridContentEventos']/figure/a[2]/@href",
+            "callback": "parse_event"
+        }],
+        "fields": [{
+                "key": "name",
+                "path": "//*figure/a[2]/figcaption/h2/text()"
+            },
+            {
+                "key": "location",
+                "path": "//*figure/a[2]/figcaption/div/span[1]/text()"
+            },
+            {
+                "key": "date",
+                "path": "/div[1]/text()"
+            },
+            {
+                "key": "flyer",
+                "path": "//*figure/a[2]/picture/img/@src"
+            },
+            {
+                "key": "link",
+                "path": "//*figure/a[2]/@href"
+            },
+            {
+                "key": "description",
+                "path": "//*p/text()"
+            },
+            {
+                "key": "lowestPriceTicket",
+                "path": "//*p/text()"
+            },
+            {
+                "key": "tags",
+                "path": "//*figure/a[2]/figcaption/h2/text()"
+            },
+            {
+                "key": "isCarnival",
+                "path": "//*figure/a[2]/figcaption/h2/text()"
+            },
+            {
+                "key": "canBuyOnline",
+                "path": "/a/@data-src"
+            }
+        ],
+        "isActive": true
+    },
+    {
+        "name": "SafeTicket",
+        "alias": "safeticket",
+        "logo": "https://www.safeticket.com.br/build/images/favicon/android-icon-192x192.png",
+        "domain": "safeticket.com.br",
+        "lookup": [
+            "https://www.safeticket.com.br/eventos/salvador_ba/?busca=carnaval",
+            "https://www.safeticket.com.br/eventos/salvador_ba/?busca=bloco",
+            "https://www.safeticket.com.br/eventos/salvador_ba/?busca=lavagem",
+            "https://www.safeticket.com.br/eventos/salvador_ba/?busca=baile",
+            "https://www.safeticket.com.br/eventos/salvador_ba/?busca=festa",
+            "https://www.safeticket.com.br/eventos/salvador_ba/?busca=cortejo"
+        ],
+        "blocks": [{
+                "name": "event",
+                "path": "//div[contains(@class, 'search-results__grid')]"
+            },
+            {
+                "name": "description",
+                "path": "/html/body/main/section[2]/div[2]/div/div/div/figure/figcaption"
+            },
+            {
+                "name": "information",
+                "path": "/html/body/main/section[2]/div[2]/div/div/div/figure/figcaption/div[2]"
+            }
+        ],
+        "rules": [{
+            "path": "/html/body/section[2]/div/div[2]/div/a/@href",
+            "callback": "parse_event"
+        }],
+        "fields": [{
+                "key": "name",
+                "path": "//div/a/div[2]/div[1]/div[1]/text()"
+            },
+            {
+                "key": "location",
+                "path": "//*figure/a[2]/figcaption/div/span[1]/text()"
+            },
+            {
+                "key": "date",
+                "path": "//div/a/div[2]/div[1]/div[3]/text()"
+            },
+            {
+                "key": "flyer",
+                "path": "//*figure/a[2]/picture/img/@src"
+            },
+            {
+                "key": "link",
+                "path": "//div/a/@href"
+            },
+            {
+                "key": "description",
+                "path": "//*p/text()"
+            },
+            {
+                "key": "lowestPriceTicket",
+                "path": "//div/a/div[2]/div[2]/text()"
+            },
+            {
+                "key": "tags",
+                "path": "//*figure/a[2]/figcaption/h2/text()"
+            },
+            {
+                "key": "isCarnival",
+                "path": "//*figure/a[2]/figcaption/h2/text()"
+            },
+            {
+                "key": "canBuyOnline",
+                "path": "/a/@data-src"
+            }
+        ],
+        "isActive": true
+    }
+]
